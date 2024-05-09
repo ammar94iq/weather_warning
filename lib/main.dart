@@ -131,9 +131,14 @@ class Home extends StatelessWidget {
   }
 }
 
-class FirstOption extends StatelessWidget {
+class FirstOption extends StatefulWidget {
   const FirstOption({super.key});
 
+  @override
+  State<FirstOption> createState() => _FirstOptionState();
+}
+
+class _FirstOptionState extends State<FirstOption> {
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -184,9 +189,12 @@ class FirstOption extends StatelessWidget {
                   ),
                   onPressed: () async {
                     for (int i = 0; i < 3; i++) {
-                      await Vibration.vibrate(duration: 5000);
+                      setState(() async {
+                        await Vibration.vibrate(duration: 1000);
 
-                      await Future.delayed(const Duration(milliseconds: 2000));
+                        await Future.delayed(
+                            const Duration(milliseconds: 2000));
+                      });
                     }
                   },
                   child: const Text(
@@ -228,9 +236,14 @@ class FirstOption extends StatelessWidget {
   }
 }
 
-class SecondOption extends StatelessWidget {
+class SecondOption extends StatefulWidget {
   const SecondOption({super.key});
 
+  @override
+  State<SecondOption> createState() => _SecondOptionState();
+}
+
+class _SecondOptionState extends State<SecondOption> {
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -281,9 +294,12 @@ class SecondOption extends StatelessWidget {
                   ),
                   onPressed: () async {
                     for (int i = 0; i < 2; i++) {
-                      await Vibration.vibrate(duration: 5000);
+                      setState(() async {
+                        await Vibration.vibrate(duration: 1000);
 
-                      await Future.delayed(const Duration(milliseconds: 2000));
+                        await Future.delayed(
+                            const Duration(milliseconds: 2000));
+                      });
                     }
                   },
                   child: const Text(
@@ -326,9 +342,14 @@ class SecondOption extends StatelessWidget {
   }
 }
 
-class ThirdOption extends StatelessWidget {
+class ThirdOption extends StatefulWidget {
   const ThirdOption({super.key});
 
+  @override
+  State<ThirdOption> createState() => _ThirdOptionState();
+}
+
+class _ThirdOptionState extends State<ThirdOption> {
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -378,7 +399,9 @@ class ThirdOption extends StatelessWidget {
                     backgroundColor: Colors.black.withOpacity(0.7),
                   ),
                   onPressed: () async {
-                    await Vibration.vibrate(duration: 5000);
+                    setState(() async {
+                      await Vibration.vibrate(duration: 1000);
+                    });
                   },
                   child: const Text(
                     "تجربة",
