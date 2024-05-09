@@ -183,13 +183,11 @@ class FirstOption extends StatelessWidget {
                     backgroundColor: Colors.black.withOpacity(0.7),
                   ),
                   onPressed: () async {
-                    for (int i = 0; i < 3; i++) {
-                      await Vibration.vibrate(duration: 1000);
-                      await Future.delayed(const Duration(milliseconds: 2000));
-                      await Vibration.vibrate(duration: 1000);
-                      await Future.delayed(const Duration(milliseconds: 2000));
-                      await Vibration.vibrate(duration: 1000);
-                    }
+                    await Vibration.vibrate(duration: 1000);
+                    await Future.delayed(const Duration(milliseconds: 2000));
+                    await Vibration.vibrate(duration: 1000);
+                    await Future.delayed(const Duration(milliseconds: 2000));
+                    await Vibration.vibrate(duration: 1000);
                   },
                   child: const Text(
                     "تجربة",
@@ -282,11 +280,9 @@ class SecondOption extends StatelessWidget {
                     backgroundColor: Colors.black.withOpacity(0.7),
                   ),
                   onPressed: () async {
-                    for (int i = 0; i < 2; i++) {
-                      await Vibration.vibrate(duration: 1000);
-                      await Future.delayed(const Duration(milliseconds: 2000));
-                      await Vibration.vibrate(duration: 1000);
-                    }
+                    await Vibration.vibrate(duration: 1000);
+                    await Future.delayed(const Duration(milliseconds: 2000));
+                    await Vibration.vibrate(duration: 1000);
                   },
                   child: const Text(
                     "تجربة",
