@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
+import 'package:weather_warning/location.dart';
 
 void main() {
   runApp(const MyApp());
@@ -166,16 +168,32 @@ class FirstOption extends StatelessWidget {
                 const SizedBox(height: 20.0),
                 Expanded(
                   child: Container(
+                    padding: const EdgeInsets.all(15.0),
                     height: double.infinity,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("images/weather.png"),
-                        fit: BoxFit.fill,
-                      ),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(10.0),
                     ),
+                    child: const FreeMap(),
                   ),
                 ),
                 const SizedBox(height: 20.0),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                  ),
+                  onPressed: () async {
+                    for (int i = 0; i < 3; i++) {
+                      await Vibration.vibrate(duration: 5000);
+
+                      await Future.delayed(const Duration(milliseconds: 2000));
+                    }
+                  },
+                  child: const Text(
+                    "تجربة",
+                    style: TextStyle(fontSize: 20.0, color: Colors.white),
+                  ),
+                ),
                 const Card(
                   child: Padding(
                     padding: EdgeInsets.all(8.0),
@@ -247,13 +265,30 @@ class SecondOption extends StatelessWidget {
                 const SizedBox(height: 20.0),
                 Expanded(
                   child: Container(
+                    padding: const EdgeInsets.all(15.0),
                     height: double.infinity,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("images/weather.png"),
-                        fit: BoxFit.fill,
-                      ),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(10.0),
                     ),
+                    child: const FreeMap(),
+                  ),
+                ),
+                const SizedBox(height: 20.0),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                  ),
+                  onPressed: () async {
+                    for (int i = 0; i < 2; i++) {
+                      await Vibration.vibrate(duration: 5000);
+
+                      await Future.delayed(const Duration(milliseconds: 2000));
+                    }
+                  },
+                  child: const Text(
+                    "تجربة",
+                    style: TextStyle(fontSize: 20.0, color: Colors.white),
                   ),
                 ),
                 const SizedBox(height: 20.0),
@@ -328,13 +363,26 @@ class ThirdOption extends StatelessWidget {
                 const SizedBox(height: 20.0),
                 Expanded(
                   child: Container(
+                    padding: const EdgeInsets.all(15.0),
                     height: double.infinity,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("images/weather.png"),
-                        fit: BoxFit.fill,
-                      ),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(10.0),
                     ),
+                    child: const FreeMap(),
+                  ),
+                ),
+                const SizedBox(height: 20.0),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black.withOpacity(0.7),
+                  ),
+                  onPressed: () async {
+                    await Vibration.vibrate(duration: 5000);
+                  },
+                  child: const Text(
+                    "تجربة",
+                    style: TextStyle(fontSize: 20.0, color: Colors.white),
                   ),
                 ),
                 const SizedBox(height: 20.0),
